@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Embed Tool</title>
+    <style>
+      body {
+        background-image: url("gude.png");
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+
+      .input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .input input {
+        width: 300px;
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: none;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #212121;
+        color: white;
+        cursor: pointer;
+      }
+
+      .button:hover {
+        background-color: #424242;
+      }
+
+      #websiteEmbed {
+        width: 800px;
+        height: 600px;
+        border: none;
+      }
+
+      #footer {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 12px;
+        text-align: right;
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="input">
+      <input type="text" id="websiteInput" placeholder="Enter website URL" />
+    </div>
+
+    <div class="button-container">
+      <button class="button" onclick="embedWebsite()">Embed</button>
+      <button class="button" onclick="embedYoutube()">Youtube</button>
+      <button class="button" onclick="embedEmerald()">Emerald</button>
+      <button class="button" onclick="embedWebsites()">Websites</button>
+    </div>
+
+    <div id="websiteEmbed"></div>
+
+    <div id="footer">
+      <p>Embed Tool by ChatGPT</p>
+    </div>
+
+    <script>
+      function embedWebsite() {
+        var url = document.getElementById("websiteInput").value;
+        var embedCode = '<iframe src="' + url + '" frameborder="0" style="width:100%;height:100%;"></iframe>';
+        document.getElementById("websiteEmbed").innerHTML = embedCode;
+      }
+
+      function embedYoutube() {
+        var url = "https://il.ax";
+        var embedCode = '<iframe src="' + url + '" frameborder="0" style="width:100%;height:100%;"></iframe>';
+        document.getElementById("websiteEmbed").innerHTML = embedCode;
+      }
+
+      function embedEmerald() {
+        var url = "https://ill.malmo.cl";
+        var embedCode = '<iframe src="' + url + '" frameborder="0" style="width:100%;height:100%;"></iframe>';
+        document.getElementById("websiteEmbed").innerHTML = embedCode;
+      }
+
+      function embedWebsites() {
+        var url = "slide.html";
+        var embedCode
+        var newWindow = window.open(url, "Websites", "width=800,height=600");
+      }
+    </script>
+  </body>
+</html>
